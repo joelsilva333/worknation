@@ -25,8 +25,8 @@ export default function Hero() {
           }}>
           <Link
             href="#trabalhos"
-            className="flex items-center gap-2 rounded-full bg-primary px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/30">
-            EXPLORAR TRABALHOS
+            className="btn-primary px-7 py-3">
+            {"Explorar Projectos".toUpperCase()}
             <motion.span
               animate={{ x: [0, 6, 0] }}
               transition={{

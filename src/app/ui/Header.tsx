@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 const navItems = [
   { label: "Início", href: "#inicio" },
   { label: "Sobre", href: "#sobre" },
-  { label: "Meus trabalhos", href: "#trabalhos" },
+  { label: "Projectos", href: "#trabalhos" },
 ];
 
 export default function Header() {
@@ -50,8 +50,7 @@ export default function Header() {
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          transition={{ type: "spring", stiffness: 400, damping: 20 }}
-          className="rounded-full bg-primary font-rubik px-6 py-2 text-sm font-semibold text-white shadow-lg shadow-primary/30 cursor-pointer">
+          className="btn-primary px-6 py-2">
           {"Entrar em contacto".toUpperCase()}
         </motion.button>
       </nav>

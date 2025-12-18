@@ -8,3 +8,11 @@
   --font-syne: var(--font-syne);
   --font-rubik: var(--font-rubik);
 }
+
+.btn-primary {
+  @apply font-rubik flex items-center h-14 justify-center gap-2 cursor-pointer rounded-full bg-primary  text-sm font-semibold border-primary border text-white shadow-lg shadow-primary/30 hover:bg-transparent transition-all duration-300;
+}
+
+.btn-secondary {
+  @apply font-rubik flex items-center h-14 justify-center gap-2 cursor-pointer rounded-full hover:bg-primary text-sm font-semibold border-primary border text-white shadow-lg shadow-primary/30 bg-transparent transition-all duration-300;
+}

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section className="min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="min-h-96 flex items-center justify-center overflow-hidden px-12 py-24">
       <div className="flex max-w-7xl w-full gap-24 items-center">
         <motion.div
           className="w-1/2 px-4 text-left"
@@ -32,7 +32,7 @@ export default function About() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}>
             <Link href="#trabalhos">
-              <span className="rounded-full bg-primary px-6 py-2 text-sm font-semibold text-white shadow-lg shadow-primary/30">
+              <span className="btn-primary px-6 py-2">
                 VER MEUS TRABALHOS
               </span>
             </Link>
