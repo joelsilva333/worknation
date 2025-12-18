@@ -8,7 +8,7 @@ export default function Projects() {
       <h2 className="font-syne text-5xl font-bold">Projetos em Destaque</h2>
 
       <ul className="flex flex-wrap w-full gap-12">
-        <li className="max-w-md w-full h-100 rounded-2xl">
+        <li className="max-w-xl w-full h-125 rounded-2xl">
           <Image
             src={""}
             alt={""}
@@ -29,7 +29,7 @@ export default function Projects() {
           </div>
         </li>
 
-         <li className="max-w-md w-full h-100 rounded-2xl">
+         <li className="max-w-xl w-full h-125 rounded-2xl">
           <Image
             src={""}
             alt={""}
