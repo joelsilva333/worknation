@@ -3,14 +3,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const navItems = [
-  { label: "Início", href: "#inicio" },
-  { label: "Sobre", href: "#sobre" },
+  { label: "Início", href: "/" },
+  { label: "Sobre", href: "/about" },
   { label: "Projectos", href: "#trabalhos" },
 ];
 
 export default function Header() {
+
+  const pathname = usePathname();
+
   return (
     <motion.header
       initial={{ y: -40, opacity: 0 }}
@@ -41,7 +45,7 @@ export default function Header() {
               key={item.label}
               whileHover={{ y: -2 }}
               transition={{ duration: 0.2 }}
-              className="cursor-pointer text-sm font-medium font-rubik text-white/80 hover:text-white">
+              className={`cursor-pointer text-sm font-medium font-rubik text-white/80 hover:text-white ${pathname === item.href ? "font-bold border-b-2 border-blue-700" : ""}`}>
               <Link href={item.href}>{item.label.toUpperCase()}</Link>
             </motion.li>
           ))}

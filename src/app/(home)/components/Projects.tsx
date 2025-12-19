@@ -116,19 +116,20 @@ export default function Projects() {
           <motion.li
             key={project.id}
             variants={itemVariants}
-            className="max-w-xl w-full rounded-2xl">
+            className="max-w-xl w-full rounded-2xl hover:scale-105 transition-all duration-300 hover:bg-gray-200/5 cursor-pointer">
+            <Link href={project.link}></Link>
             <motion.div variants={imageVariants}>
               <Image
                 src={project.image}
                 alt={project.title}
                 width={1920}
                 height={1080}
-                className="h-125 w-full rounded-2xl object-cover"
+                className="h-125 w-full rounded-t-2xl object-cover"
               />
             </motion.div>
 
             <motion.div
-              className="text-white flex flex-col gap-4 py-8"
+              className="text-white flex flex-col gap-4 py-8 px-5"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
@@ -146,7 +147,7 @@ export default function Projects() {
                 />
               </div>
 
-              <div className="flex flex-col gap-2 font-rubik">
+              <div className="flex flex-col gap-2 font-rubik items-start">
                 <p className="text-sm text-gray-300">
                   Client: <span className="text-white">{project.client}</span>
                 </p>
@@ -167,8 +168,8 @@ export default function Projects() {
           viewport={{ once: true }}>
           <Link
             href="/projects"
-            className="btn-secondary px-8 py-2 flex gap-2">
-            EXPLORAR MAIS <ArrowRight />
+            className="btn-primary px-8 py-2 flex gap-2">
+            EXPLORAR MAIS PROJECTOS <ArrowRight />
           </Link>
         </motion.div>
       )}
