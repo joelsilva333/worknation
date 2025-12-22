@@ -8,11 +8,10 @@ import { usePathname } from "next/navigation";
 const navItems = [
   { label: "Início", href: "/" },
   { label: "Sobre", href: "/about" },
-  { label: "Projectos", href: "#trabalhos" },
+  { label: "Projectos", href: "/projects" },
 ];
 
 export default function Header() {
-
   const pathname = usePathname();
 
   return (
@@ -22,7 +21,7 @@ export default function Header() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="sticky top-4 z-50 mx-auto w-full flex max-w-7xl items-center justify-between rounded-full bg-primary/20 px-8 py-4 text-white backdrop-blur-xs">
       <Link
-        href="#"
+        href="/"
         className="flex items-center gap-2">
         <motion.div
           whileHover={{ scale: 1.05 }}
@@ -45,18 +44,21 @@ export default function Header() {
               key={item.label}
               whileHover={{ y: -2 }}
               transition={{ duration: 0.2 }}
-              className={`cursor-pointer text-sm font-medium font-rubik text-white/80 hover:text-white ${pathname === item.href ? "font-bold border-b-2 border-blue-700" : ""}`}>
+              className={`cursor-pointer text-sm font-medium font-rubik text-white/80 hover:text-white ${
+                pathname === item.href
+                  ? "font-bold border-b-2 border-blue-700"
+                  : ""
+              }`}>
               <Link href={item.href}>{item.label.toUpperCase()}</Link>
             </motion.li>
           ))}
         </ul>
 
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+        <Link
+          href={"/contact-us"}
           className="btn-primary px-6 py-2">
           {"Entrar em contacto".toUpperCase()}
-        </motion.button>
+        </Link>
       </nav>
     </motion.header>
   );
