@@ -1,10 +1,19 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { PROJECTS } from "../../data/projects";
+
+const ITEMS_PER_PAGE = 6;
 
 export default function Projects() {
+  const [visible, setVisible] = useState(ITEMS_PER_PAGE);
+
+  const visibleProjects = PROJECTS.slice(0, visible);
+  const hasMore = visible < PROJECTS.length;
+
   return (
     <div className="flex w-full flex-col gap-16 items-center min-h-screen px-4">
       <motion.div
@@ -14,16 +23,10 @@ export default function Projects() {
         viewport={{ once: true }}
         className="w-full max-w-7xl flex flex-col gap-4 mt-16">
         <h1 className="text-5xl font-bold font-syne">Nossos projectos</h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          viewport={{ once: true }}
-          className="text-3xl text-white/40 font-rubik">
+        <p className="text-xl text-white/50 font-rubik">
           Alguns dos nossos projectos mais recentes em produção audiovisual,
           motion design e comunicação visual.
-        </motion.p>
+        </p>
       </motion.div>
 
       <motion.hr
@@ -34,38 +37,48 @@ export default function Projects() {
         className="w-full max-w-7xl border-t border-white/40 origin-left"
       />
 
-      <div className="max-w-7xl w-full mb-32 items-center flex flex-col gap-12">
+      <div className="max-w-7xl w-full mb-32 flex flex-col gap-12">
         <motion.ul
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="flex items-center gap-24 text-white w-full">
-          <li className="max-w-sm w-full hover:scale-105 transition-all duration-300 hover:bg-white/5 rounded-2xl hover:shadow-xl shadow-black/20">
-            <Link
-              href={"/projects/21"}
-              className="w-full">
-              <Image
-                src={"/images/projects/motion-1.png"}
-                alt={"Projects WorkNation"}
-                width={1920}
-                height={1080}
-                className="w-full h-96 object-cover rounded-2xl hover:opacity-80 transition-opacity duration-300"
-              />
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 w-full">
+          {visibleProjects.map((project) => (
+            <motion.li
+              key={project.id}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="hover:scale-105 transition-all duration-300 hover:bg-white/5 rounded-2xl hover:shadow-xl shadow-black/20">
+              <Link href={`/projects/${project.id}`}>
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={1920}
+                  height={1080}
+                  className="w-full h-72 object-cover rounded-2xl"
+                />
 
-              <div className="flex flex-col px-4 py-5">
-                <h3 className="font-syne font-bold text-2xl">Projecto 1</h3>
-                <p className="font-rubik text-white/60">
-                  Descrição breve do projecto 1.
-                </p>
-              </div>
-            </Link>
-          </li>
+                <div className="flex flex-col px-4 py-5 gap-1">
+                  <h3 className="font-syne font-bold text-2xl">
+                    {project.title}
+                  </h3>
+                  <p className="font-rubik text-white/60">
+                    {project.description}
+                  </p>
+                </div>
+              </Link>
+            </motion.li>
+          ))}
         </motion.ul>
 
-        <button className="btn-secondary px-6 py-2">
-          CARREGAR MAIS PROJECTOS
-        </button>
+        {hasMore && (
+          <button
+            onClick={() => setVisible((prev) => prev + ITEMS_PER_PAGE)}
+            className="btn-secondary px-6 py-2 self-center">
+            CARREGAR MAIS PROJECTOS
+          </button>
+        )}
       </div>
     </div>
   );
