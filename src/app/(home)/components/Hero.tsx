@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section>
+    <section className="w-full flex items-center justify-center bg-linear-to-b from-background/70 via-primary/0 to-background/70">
       <div className="flex w-full max-w-7xl flex-col items-center gap-8 min-h-screen justify-center px-4 text-center">
         <motion.p
           className="font-syne text-5xl font-bold leading-tight md:text-7xl"
@@ -25,7 +25,7 @@ export default function Hero() {
           }}>
           <Link
             href="#trabalhos"
-            className="btn-primary px-7 py-3">
+            className="btn-tertiary px-7 py-3">
             {"Explorar Projectos".toUpperCase()}
             <motion.span
               animate={{ x: [0, 6, 0] }}

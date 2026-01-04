@@ -19,7 +19,7 @@ export default function Header() {
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="sticky top-4 z-50 mx-auto w-full flex max-w-7xl items-center justify-between rounded-full bg-primary/20 px-8 py-4 text-white backdrop-blur-xs">
+      className="fixed top-4 z-50 left-1/2 -translate-x-1/2 w-full flex max-w-7xl items-center justify-between rounded-full bg-primary/70 px-8 py-4 text-white backdrop-blur-sm">
       <Link
         href="/"
         className="flex items-center gap-2">
@@ -56,7 +56,7 @@ export default function Header() {
 
         <Link
           href={"/contact-us"}
-          className="btn-primary px-6 py-2">
+          className="btn-tertiary px-6 py-2">
           {"Entrar em contacto".toUpperCase()}
         </Link>
       </nav>

@@ -15,7 +15,7 @@ export default function Projects() {
   const hasMore = visible < PROJECTS.length;
 
   return (
-    <div className="flex w-full flex-col gap-16 items-center min-h-screen px-4">
+    <div className="flex w-full flex-col gap-16 items-center min-h-screen py-24 px-4 bg-linear-to-b from-background/70 via-primary/0 to-background/70">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}

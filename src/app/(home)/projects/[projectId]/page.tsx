@@ -28,13 +28,12 @@ export default function ProjectIdPage({
   }
 
   return (
-    <div className="flex w-full flex-col gap-16 items-center min-h-screen px-4">
+    <div className="flex w-full flex-col gap-16 items-center min-h-screen py-24 px-4 bg-linear-to-b from-background/70 via-primary/0 to-background/70">
       <motion.div
         initial={{ opacity: 0, y: 32 }}
         animate={{ opacity: 1, y: 0 }}
         className="w-full max-w-7xl flex flex-col gap-2 mt-16">
         <h1 className="text-5xl font-bold font-syne">{currentProject.title}</h1>
-        <p className="text-xl text-white/50 font-rubik">Detalhes do projecto</p>
       </motion.div>
 
       <motion.hr className="w-full max-w-7xl border-t border-white/40" />
@@ -50,9 +49,9 @@ export default function ProjectIdPage({
           />
         </motion.div>
 
-        <div className="max-w-3xl w-full flex flex-col gap-4 ">
-          <h2 className="text-2xl font-syne font-bold text-white">
-            Descrição do Projecto
+        <div className="w-full flex flex-col gap-4 py-12">
+          <h2 className="text-3xl font-syne font-bold text-white">
+          Cliente: {currentProject.client}
           </h2>
           <p className="text-lg font-rubik text-white/60 ">
             {currentProject.description}
@@ -67,7 +66,7 @@ export default function ProjectIdPage({
             }
             whileHover={prevProject ? { x: -4 } : undefined}
             whileTap={prevProject ? { scale: 0.96 } : undefined}
-            className={`btn-secondary px-6 py-2 flex items-center gap-2 ${
+            className={`btn-tertiary px-6 py-2 flex items-center gap-2 ${
               !prevProject && "opacity-40 cursor-not-allowed"
             }`}>
             <ArrowLeft className="h-4 w-4" />
@@ -81,7 +80,7 @@ export default function ProjectIdPage({
             }
             whileHover={nextProject ? { x: 4 } : undefined}
             whileTap={nextProject ? { scale: 0.96 } : undefined}
-            className={`btn-secondary px-6 py-2 flex items-center gap-2 ${
+            className={`btn-tertiary px-6 py-2 flex items-center gap-2 ${
               !nextProject && "opacity-40 cursor-not-allowed"
             }`}>
             Próximo

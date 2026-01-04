@@ -44,7 +44,7 @@ export default function Projects() {
   };
 
   return (
-    <section className="flex flex-col gap-16 items-center py-24 min-h-screen">
+    <section className="flex flex-col gap-16 items-center py-24 min-h-screen  bg-linear-to-b from-background/70 via-primary/0 to-background/70">
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -72,7 +72,7 @@ export default function Projects() {
                   alt={project.title}
                   width={1920}
                   height={1080}
-                  className="h-125 w-full rounded-t-2xl object-cover"
+                  className="h-100 w-full rounded-t-2xl object-cover"
                 />
               </motion.div>
 
@@ -117,7 +117,7 @@ export default function Projects() {
           viewport={{ once: true }}>
           <Link
             href="/projects"
-            className="btn-primary px-8 py-2 flex gap-2">
+            className="btn-tertiary px-8 py-2 flex gap-2">
             EXPLORAR MAIS PROJECTOS <ArrowRight />
           </Link>
         </motion.div>

@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function About() {
   return (
-    <div className="flex w-full flex-col gap-16 items-center justify-center min-h-screen px-4">
+    <div className="flex w-full flex-col gap-16 items-center justify-center min-h-screen py-24 px-4 bg-linear-to-b from-background/70 via-primary/0 to-background/70">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -21,7 +21,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
           viewport={{ once: true }}
-          className="text-xl text-white/50 font-rubik">
+          className="text-xl text-white/80 font-rubik">
           A WorkNation é um estúdio criativo focado em produção audiovisual,
           motion design e comunicação visual para marcas, empresas e produtos
           digitais.
@@ -51,7 +51,7 @@ export default function About() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
           viewport={{ once: true }}
-          className="text-3xl text-white/40 w-full max-w-xl font-rubik">
+          className="text-3xl text-white/80 w-full max-w-xl font-rubik">
           Desenvolvemos conteúdos audiovisuais que unem animação, motion
           graphics, som e narrativa visual para comunicar mensagens de forma
           clara, envolvente e memorável. Cada projeto é pensado para gerar
@@ -92,7 +92,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
           viewport={{ once: true }}
-          className="flex items-center gap-24 text-white/50">
+          className="flex items-center gap-24 text-white/80">
           <li className="mt-6 ">
             <Link
               href={"#"}

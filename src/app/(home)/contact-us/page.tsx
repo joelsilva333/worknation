@@ -64,7 +64,7 @@ export default function ContactUs() {
               className="border-b-2 text-2xl font-normal outline-none resize-none"></textarea>
           </label>
 
-          <button className="btn-primary px-6 py-2 mt-4">
+          <button className="btn-tertiary px-6 py-2 mt-4">
             ENVIAR MENSAGEM
           </button>
         </form>
