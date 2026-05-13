@@ -4,7 +4,6 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
-
 export default function ServicesPage() {
   return (
     <div className="flex flex-col justify-center items-center">
@@ -43,6 +42,22 @@ export default function ServicesPage() {
           ))}
         </div>
       </section>
+
+      <div className="flex flex-col items-center justify-center gap-8 py-5">
+        <h2 className="text-4xl font-bold font-syne">Parceiros Estratégicos</h2>
+
+        <ul className="max-w-2xl w-full flex gap-12 items-center">
+          <li className="text-xl text-white/80 font-rubik  text-center">
+            <Image
+              src={"/"}
+              alt=""
+              width={200}
+              height={100}
+              className=""
+            />
+          </li>
+        </ul>
+      </div>
 
       <section className="flex flex-row-reverse items-center justify-center min-h-200 py-12 max-w-7xl w-full gap-24">
         <div className="flex flex-col gap-4 max-w-xl w-full">
@@ -83,26 +98,42 @@ export default function ServicesPage() {
       <div className="flex flex-col items-center justify-center gap-4 py-12">
         <h2 className="text-4xl font-bold font-syne">Outros Serviços</h2>
         <p className="text-xl text-white/80 font-rubik max-w-2xl text-center">
-          Além de vídeos animados, oferecemos uma gama de serviços criativos para
-            atender às suas necessidades de comunicação visual.
+          Além de vídeos animados, oferecemos uma gama de serviços criativos
+          para atender às suas necessidades de comunicação visual.
         </p>
 
         <div>
-            <Swiper>
-                <SwiperSlide>
-                    <div className="relative w-full max-w-xl h-100 flex items-center justify-center">
-                        <Image
-                            src={"/images/services.jpg"}
-                            alt={""}
-                            width={300}
-                            height={200}
-                            className={`rounded-lg object-cover shadow-lg shadow-primary/30 w-100 h-80`}
-                        />
-                    </div>
-                </SwiperSlide>
-            </Swiper>
+          <Swiper>
+            <SwiperSlide>
+              <div className="relative w-full max-w-xl h-100 flex items-center justify-center">
+                <Image
+                  src={"/images/services.jpg"}
+                  alt={""}
+                  width={300}
+                  height={200}
+                  className={`rounded-lg object-cover shadow-lg shadow-primary/30 w-100 h-80`}
+                />
+              </div>
+            </SwiperSlide>
+          </Swiper>
         </div>
       </div>
+
+      <section className="flex flex-col items-center justify-center min-h-200 py-12 max-w-7xl w-full gap-24">
+        <div className="flex flex-col items-center justify-center gap-4 py-12">
+          <p>
+            Nosso processo de produção é transparente e colaborativo, garantindo
+            que você esteja envolvido em cada etapa, desde a concepção até a
+            entrega final. Trabalhamos com prazos flexíveis e orçamentos
+            personalizados para atender às suas necessidades específicas.
+          </p>
+          <h2 className="text-4xl font-bold font-syne">Depoimentos</h2>
+          <p className="text-xl text-white/80 font-rubik max-w-2xl text-center">
+            Veja o que nossos clientes têm a dizer sobre nossos serviços de
+            vídeos animados e como transformamos suas ideias em realidade.
+          </p>
+        </div>
+      </section>
     </div>
   );
 }
