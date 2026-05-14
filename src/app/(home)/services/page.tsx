@@ -77,10 +77,9 @@ export default function ServicesPage() {
             </p>
 
             <p className="text-xl text-white/90 font-rubik">
-              Desde o brainstorm inicial até o último retoque na pós-produção,
-              nossa equipe cuida de cada detalhe. Nosso compromisso é tirar seu
-              projeto do papel e transformá-lo em uma realidade animada que
-              economiza o tempo da sua equipe e maximiza seu impacto.
+              Nosso compromisso é tirar seu projeto do papel e transformá-lo em
+              uma realidade animada que economiza o tempo da sua equipe e
+              maximiza seu impacto.
             </p>
           </div>
 
@@ -263,8 +262,8 @@ export default function ServicesPage() {
         </div>
 
         <ul className="flex items-top gap-12 justify-around">
-          <li className="max-w-xl w-full p-12 bg-white/5 rounded-lg flex gap-4">
-            <BookOpen className="w-8 h-8 text-white" />
+          <li className="max-w-xl w-full p-10 bg-white/5 rounded-lg flex gap-4">
+            <BookOpen size={54} className="text-white" />
             <div className="flex flex-col gap-1 ">
               <div className="mb-4">
                 <p>Pré-produção</p>
@@ -282,13 +281,13 @@ export default function ServicesPage() {
             </div>
           </li>
 
-          <li className="max-w-xl w-full p-12 bg-white/5 rounded-lg flex gap-4">
-            <VideoIcon className="w-8 h-8 text-white" />
+          <li className="max-w-xl w-full p-10 bg-white/5 rounded-lg flex gap-4">
+            <VideoIcon size={54} className="text-white" />
             <div className="flex flex-col gap-1 ">
               <div className="mb-4">
                 <p>Produção</p>
                 <h1 className="text-2xl font-semibold">
-                  gravação profissional sem imprevistos.
+                  Gravação profissional sem imprevistos.
                 </h1>
               </div>
 
@@ -301,8 +300,8 @@ export default function ServicesPage() {
             </div>
           </li>
 
-          <li className="max-w-xl w-full p-12 bg-white/5 rounded-lg flex gap-4">
-            <EditIcon className="w-8 h-8 text-white" />
+          <li className="max-w-xl w-full p-10 bg-white/5 rounded-lg flex gap-4">
+            <EditIcon size={54} className="text-white" />
             <div className="flex flex-col gap-1 ">
               <div className="mb-4">
                 <p>Pós-produção</p>
