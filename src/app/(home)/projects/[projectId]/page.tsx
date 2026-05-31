@@ -28,37 +28,40 @@ export default function ProjectIdPage({
   }
 
   return (
-    <div className="flex w-full flex-col gap-16 items-center min-h-screen py-24 px-4 bg-linear-to-b from-background/70 via-primary/0 to-background/70">
+    <div className="flex w-full flex-col gap-16 items-center min-h-screen py-24 px-4 bg-linear-to-b from-background/70 via-primary/0 to-background/70 max-lg:py-16 max-lg:gap-10">
       <motion.div
         initial={{ opacity: 0, y: 32 }}
         animate={{ opacity: 1, y: 0 }}
-        className="w-full max-w-7xl flex flex-col gap-2 mt-16">
-        <h1 className="text-5xl font-bold font-syne">{currentProject.title}</h1>
+        className="w-full max-w-7xl flex flex-col gap-2 mt-16 max-lg:mt-24">
+        <h1 className="text-5xl font-bold font-syne max-lg:text-4xl">
+          {currentProject.title}
+        </h1>
       </motion.div>
 
       <motion.hr className="w-full max-w-7xl border-t border-white/40" />
 
-      <div className="w-full max-w-7xl flex flex-col gap-8 items-center">
+      <div className="w-full max-w-7xl flex flex-col gap-8 items-center max-lg:gap-6">
         <motion.div className="overflow-hidden rounded-2xl w-full">
           <Image
             src={currentProject.image}
             alt={currentProject.title}
             width={1920}
             height={1080}
-            className="w-full h-125 object-cover"
+            className="w-full h-125 object-cover max-lg:h-72"
           />
         </motion.div>
 
-        <div className="w-full flex flex-col gap-4 py-12">
-          <h2 className="text-3xl font-syne font-bold text-white">
-          Cliente: {currentProject.client}
+        <div className="w-full flex flex-col gap-4 py-12 max-lg:py-6">
+          <h2 className="text-3xl font-syne font-bold text-white max-lg:text-2xl">
+            Cliente: {currentProject.client}
           </h2>
-          <p className="text-lg font-rubik text-white/60 ">
+
+          <p className="text-lg font-rubik text-white/60 max-lg:text-base">
             {currentProject.description}
           </p>
         </div>
 
-        <div className="flex justify-between w-full gap-4 mt-8">
+        <div className="flex justify-between w-full gap-4 mt-8 max-lg:flex-col max-lg:mt-4 max-lg:gap-3">
           <motion.button
             disabled={!prevProject}
             onClick={() =>
@@ -66,7 +69,7 @@ export default function ProjectIdPage({
             }
             whileHover={prevProject ? { x: -4 } : undefined}
             whileTap={prevProject ? { scale: 0.96 } : undefined}
-            className={`btn-tertiary px-6 py-2 flex items-center gap-2 ${
+            className={`btn-tertiary px-6 py-2 flex items-center gap-2 max-lg:w-full max-lg:justify-center ${
               !prevProject && "opacity-40 cursor-not-allowed"
             }`}>
             <ArrowLeft className="h-4 w-4" />
@@ -80,7 +83,7 @@ export default function ProjectIdPage({
             }
             whileHover={nextProject ? { x: 4 } : undefined}
             whileTap={nextProject ? { scale: 0.96 } : undefined}
-            className={`btn-tertiary px-6 py-2 flex items-center gap-2 ${
+            className={`btn-tertiary px-6 py-2 flex items-center gap-2 max-lg:w-full max-lg:justify-center ${
               !nextProject && "opacity-40 cursor-not-allowed"
             }`}>
             Próximo

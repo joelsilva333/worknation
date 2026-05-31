@@ -44,13 +44,13 @@ export default function Projects() {
   };
 
   return (
-    <section className="flex flex-col gap-16 items-center py-24 min-h-screen  bg-linear-to-b from-background/70 via-primary/0 to-background/70">
+    <section className="flex flex-col gap-16 items-center py-24 min-h-screen bg-linear-to-b from-background/70 via-primary/0 to-background/70 max-lg:gap-10 max-lg:py-16 max-lg:px-6">
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="font-syne text-5xl font-bold">
+        className="font-syne text-5xl font-bold text-center max-lg:text-4xl">
         Projetos em Destaque
       </motion.h2>
 
@@ -59,12 +59,12 @@ export default function Projects() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="flex flex-wrap w-full gap-24 justify-center max-w-7xl">
+        className="flex flex-wrap w-full gap-24 justify-center max-w-7xl max-lg:gap-10">
         {visibleProjects.map((project) => (
           <motion.li
             key={project.id}
             variants={itemVariants}
-            className="max-w-xl w-full rounded-2xl hover:scale-105 transition-all duration-300 hover:bg-gray-200/5 cursor-pointer">
+            className="max-w-xl w-full rounded-2xl hover:scale-105 transition-all duration-300 hover:bg-gray-200/5 cursor-pointer max-lg:max-w-full">
             <Link href={`/projects/${project.id}`}>
               <motion.div variants={imageVariants}>
                 <Image
@@ -72,20 +72,21 @@ export default function Projects() {
                   alt={project.title}
                   width={1920}
                   height={1080}
-                  className="h-100 w-full rounded-t-2xl object-cover"
+                  className="h-100 w-full rounded-t-2xl object-cover max-lg:h-72"
                 />
               </motion.div>
 
               <motion.div
-                className="text-white flex flex-col gap-4 py-8 px-5"
+                className="text-white flex flex-col gap-4 py-8 px-5 max-lg:px-4 max-lg:py-6"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.6 }}
                 viewport={{ once: true }}>
-                <div className="flex items-center gap-4">
-                  <h3 className="text-2xl font-syne font-bold">
+                <div className="flex items-center gap-4 max-lg:flex-wrap">
+                  <h3 className="text-2xl font-syne font-bold max-lg:text-xl">
                     {project.title}
                   </h3>
+
                   <motion.hr
                     initial={{ width: 0 }}
                     whileInView={{ width: 96 }}
@@ -97,10 +98,17 @@ export default function Projects() {
 
                 <div className="flex flex-col gap-2 font-rubik items-start">
                   <p className="text-sm text-gray-300">
-                    Client: <span className="text-white">{project.client}</span>
+                    Client:{" "}
+                    <span className="text-white">
+                      {project.client}
+                    </span>
                   </p>
+
                   <p className="text-sm text-gray-300">
-                    Work: <span className="text-white">{project.work}</span>
+                    Work:{" "}
+                    <span className="text-white">
+                      {project.work}
+                    </span>
                   </p>
                 </div>
               </motion.div>
@@ -114,10 +122,11 @@ export default function Projects() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true }}>
+          viewport={{ once: true }}
+          className="max-lg:w-full">
           <Link
             href="/projects"
-            className="btn-tertiary px-8 py-2 flex gap-2">
+            className="btn-tertiary px-8 py-2 flex gap-2 max-lg:w-full max-lg:justify-center">
             EXPLORAR MAIS PROJECTOS <ArrowRight />
           </Link>
         </motion.div>

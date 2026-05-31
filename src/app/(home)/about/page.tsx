@@ -7,21 +7,23 @@ import Link from "next/link";
 
 export default function About() {
   return (
-    <div className="flex w-full flex-col gap-16 items-center justify-center min-h-screen py-24 px-4 bg-linear-to-b from-background/70 via-primary/0 to-background/70">
+    <div className="flex w-full flex-col gap-16 items-center justify-center min-h-screen py-24 px-4 bg-linear-to-b from-background/70 via-primary/0 to-background/70 max-lg:gap-12 max-lg:py-16">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="w-full max-w-7xl flex flex-col gap-2 mt-16">
-        <h1 className="text-5xl font-bold font-syne">Sobre a WorkNation</h1>
+        className="w-full max-w-7xl flex flex-col gap-2 mt-16 max-lg:mt-24">
+        <h1 className="text-5xl font-bold font-syne max-lg:text-4xl">
+          Sobre a WorkNation
+        </h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
           viewport={{ once: true }}
-          className="text-xl text-white/80 font-rubik">
+          className="text-xl text-white/80 font-rubik max-lg:text-lg">
           A WorkNation é um estúdio criativo focado em produção audiovisual,
           motion design e comunicação visual para marcas, empresas e produtos
           digitais.
@@ -36,13 +38,13 @@ export default function About() {
         className="w-full max-w-7xl border-t border-white/40 origin-left"
       />
 
-      <div className="flex gap-12 w-full max-w-7xl">
+      <div className="flex gap-12 w-full max-w-7xl max-lg:flex-col max-lg:gap-8">
         <motion.h2
           initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="font-bold text-5xl font-syne w-full max-w-lg">
+          className="font-bold text-5xl font-syne w-full max-w-lg max-lg:max-w-full max-lg:text-4xl">
           Criamos impacto visual em movimento.
         </motion.h2>
 
@@ -51,7 +53,7 @@ export default function About() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
           viewport={{ once: true }}
-          className="text-3xl text-white/80 w-full max-w-xl font-rubik">
+          className="text-3xl text-white/80 w-full max-w-xl font-rubik max-lg:max-w-full max-lg:text-xl">
           Desenvolvemos conteúdos audiovisuais que unem animação, motion
           graphics, som e narrativa visual para comunicar mensagens de forma
           clara, envolvente e memorável. Cada projeto é pensado para gerar
@@ -59,13 +61,13 @@ export default function About() {
         </motion.p>
       </div>
 
-      <div className="w-full flex gap-8 items-center max-w-7xl h-125">
+      <div className="w-full flex gap-8 items-center max-w-7xl h-125 max-lg:flex-col max-lg:h-auto">
         <Image
           src={"/images/projects/motion-1.png"}
           alt={"Imagem 1"}
           width={1920}
           height={1080}
-          className="w-1/3 object-cover rounded-2xl h-full"
+          className="w-1/3 object-cover rounded-2xl h-full max-lg:w-full max-lg:h-72"
         />
 
         <Image
@@ -73,17 +75,17 @@ export default function About() {
           alt={"Imagem 2"}
           width={1920}
           height={1080}
-          className="w-2/3 object-cover rounded-2xl h-full"
+          className="w-2/3 object-cover rounded-2xl h-full max-lg:w-full max-lg:h-72"
         />
       </div>
 
-      <div className="max-w-7xl w-full mb-32 mt-8">
+      <div className="max-w-7xl w-full mb-32 mt-8 max-lg:mb-16">
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="font-syne font-bold text-5xl">
+          className="font-syne font-bold text-5xl max-lg:text-4xl">
           Sigam-nos em:
         </motion.h2>
 
@@ -92,16 +94,13 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
           viewport={{ once: true }}
-          className="flex items-center gap-24 text-white/80">
-          <li className="mt-6 ">
+          className="flex items-center gap-24 text-white/80 max-lg:flex-col max-lg:items-start max-lg:gap-6">
+          <li className="mt-6">
             <Link
               href={"#"}
               target="_blank"
-              className="text-4xl font-rubik hover:text-white flex items-center gap-2 hover:scale-105 transition-all duration-300">
-              <InstagramIcon
-                size={44}
-                className={""}
-              />{" "}
+              className="text-4xl font-rubik hover:text-white flex items-center gap-2 hover:scale-105 transition-all duration-300 max-lg:text-2xl">
+              <InstagramIcon size={32} />
               Instagram
             </Link>
           </li>
@@ -110,11 +109,8 @@ export default function About() {
             <Link
               href={"#"}
               target="_blank"
-              className="text-4xl font-rubik hover:text-white flex items-center gap-2 hover:scale-105 transition-all duration-300">
-              <LinkedinIcon
-                size={44}
-                className={""}
-              />{" "}
+              className="text-4xl font-rubik hover:text-white flex items-center gap-2 hover:scale-105 transition-all duration-300 max-lg:text-2xl">
+              <LinkedinIcon size={32} />
               LinkedIn
             </Link>
           </li>
@@ -123,11 +119,8 @@ export default function About() {
             <Link
               href={"#"}
               target="_blank"
-              className="text-4xl font-rubik hover:text-white flex items-center gap-2 hover:scale-105 transition-all duration-300">
-              <FacebookIcon
-                size={44}
-                className={""}
-              />{" "}
+              className="text-4xl font-rubik hover:text-white flex items-center gap-2 hover:scale-105 transition-all duration-300 max-lg:text-2xl">
+              <FacebookIcon size={32} />
               Facebook
             </Link>
           </li>

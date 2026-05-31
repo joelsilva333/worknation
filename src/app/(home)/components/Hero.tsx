@@ -9,11 +9,13 @@ export default function Hero() {
     <section className="w-full flex items-center justify-center bg-linear-to-b from-background/70 via-primary/0 to-background/70">
       <div className="flex w-full max-w-7xl flex-col items-center gap-8 min-h-screen justify-center px-4 text-center">
         <motion.p
-          className="font-syne text-5xl font-bold leading-tight md:text-7xl"
+          className="font-syne text-5xl font-bold  md:text-7xl"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}>
-          Elevamos marcas através do audiovisual.
+          Motion • Media • Marketing
+          <br />
+          <span className="text-3xl">Criatividade, estratégia e inovação.</span>
         </motion.p>
 
         <motion.div
